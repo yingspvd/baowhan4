@@ -23,7 +23,7 @@ export const register = async (req, res) => {
 
   try {
     await newUser.save();
-    res.status(201).json({ status: true });
+    res.status(201).json({ message: "Created Success" });
   } catch (error) {
     res.status(409).json({ Error: error.message });
   }
@@ -50,7 +50,7 @@ export const getDataFirst = async (req, res) => {
 export const getDataByUsername = async (req, res) => {
   // const { email } = req.params;
   try {
-    const data = await User.find({ name: "nn", username: "resID" });
+    const data = await User.find({ username: "pj" });
     res.status(200).json(data);
   } catch (error) {
     res.status(404).json({ Error: error.message });
